@@ -25,7 +25,7 @@ freduse CPIAUCSL, clear
 
 The raw uncleaned CPIAUCSL dataset looks like this when imported directly from FRED.
 
-![Raw CPI Data from FRED](images/cpi_raw_fred.png)
+![Raw CPI Data from FRED](images/01-cpi_raw_fred.png)
 
 We will now clean the data.
 
