@@ -21,9 +21,15 @@ Below is the Stata script used for cleaning the dataset, with detailed explanati
 freduse CPIAUCSL, clear   
 // Fetches data from the Federal Reserve Economic Data (FRED) API
 // "CPIAUCSL" is the dataset identifier for the Consumer Price Index (CPI)
-// "clear" ensures any previously loaded dataset is erased before loading the new one
+// "clear" ensures any previously loaded dataset is erased before loading the new one```
 
-* Extract year and month components from the 'daten' variable (FRED's date format)
+The raw uncleaned CPIAUCSL dataset looks like this when imported directly from FRED.
+
+![Raw CPI Data from FRED](images/cpi_raw_fred.png)
+
+We will now clean the data.
+
+```* Extract year and month components from the 'daten' variable (FRED's date format)
 gen year = year(daten)   
 // Creates a new variable 'year' that extracts the year from 'daten'
 
@@ -63,7 +69,11 @@ rename date_month date
 
 * Organize the dataset for clarity
 order date CPIAUCSL  
-// Ensures 'date' appears first, followed by 'CPIAUCSL' for easier readability
+// Ensures 'date' appears first, followed by 'CPIAUCSL' for easier readability```
+
+The data has now been cleaned. See how pretty it is?
+
+![Cleaned CPI Data from FRED](images/cpi_raw_fred.png)
 
 * Declare the dataset as a time-series dataset using 'date' as the time variable
 tsset date  
